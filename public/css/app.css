@@ -10661,18 +10661,22 @@ footer {
   border-top: 1px solid #eaeaea;
   color: #777;
   font-size: 13px;
-  font-weight: blod;
+  font-weight: bold;
 }
 
-a {
+footer a {
   color: #555;
 }
 
-a:hover {
+footer a:hover {
   color: #222;
 }
 
-img.brand-icon {
+footer small {
+  float: left;
+}
+
+footer img.brand-icon {
   width: 17px;
   height: 17px;
 }
