@@ -126,5 +126,11 @@ class UsersController extends Controller
         return redirect()->route('users.show',[$user]);
     }
 
+    public function feed()
+    {
+        return $this->statuses()
+                    ->orderBy('created_at','desc');
+    }
+
 
 }
