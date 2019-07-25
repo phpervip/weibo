@@ -1,6 +1,22 @@
 @extends('layouts.default')
 @section('title','主页')
 @section('content')
+  @if(Auth::check())
+    <div class="row">
+      <div class="col-md-8">
+        <section class="status_form">
+          @include('shared._status_form')
+        </section>
+      </div>
+      <div class="col-md-4">
+        <section class="user_info">
+          @include('shared._user_info',['user'=>Auth::user()])
+        </section>
+      </div>
+
+    </div>
+
+  @else
   <div class="jumbotron">
       <p class="lead">
         你现在所看到的是 <a href="https://learnku.com/courses/laravel-essential-training">Laravel 入门教程</a> 的示例项目主页。
@@ -12,4 +28,5 @@
         <a class="btn btn-lg btn-success" href="{{ route('signup') }}" role="button">现在注册</a>
       </p>
   </div>
+  @endif
 @stop
